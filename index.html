@@ -37,7 +37,7 @@ svg text {
                 <ul class="nav-links">
                     <li><a href="#home">Главная</a></li>
                     <li><a href="#gallery">Галерея капибар</a></li>
-                    <li><a href="#table">Таблицы капибар</a></li>
+                    <li><a href="#table">Блок капибар</a></li>
                     <li><a href="#contact"> тут что-то будет</a></li>
                 </ul>
             </nav>
@@ -69,5 +69,589 @@ svg text {
         </div>
     </section>
 <div id="6ba1c7a1ecb5993f1fe365b2caeaeb77" class="ww-informers-box-854753"><p class="ww-informers-box-854754"><a href="https://world-weather.ru/pogoda/russia/ust_ilimsk/month/">Подробнее о погоде в Усть-Илимске на 30 дней</a><br><a href="https://world-weather.ru/pogoda/russia/lipetsk/">https://world-weather.ru/pogoda/russia/lipetsk/</a></p></div><script async type="text/javascript" charset="utf-8" src="https://world-weather.ru/wwinformer.php?userid=6ba1c7a1ecb5993f1fe365b2caeaeb77"></script><style>.ww-informers-box-854754{-webkit-animation-name:ww-informers54;animation-name:ww-informers54;-webkit-animation-duration:1.5s;animation-duration:1.5s;white-space:nowrap;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;font-size:12px;font-family:Arial;line-height:18px;text-align:center}@-webkit-keyframes ww-informers54{0%,80%{opacity:0}100%{opacity:1}}@keyframes ww-informers54{0%,80%{opacity:0}100%{opacity:1}}</style>
-</body>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Капибары - самые дружелюбные грызуны</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #8BC6EC 0%, #4A8F51 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: #FFD166;
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FF6B6B;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #2C5530;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-description {
+            color: #5A6B5C;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4A8F51;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #7F8C8D;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .tag {
+            background: #E8F4F8;
+            color: #3498DB;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .tag-habitat {
+            background: #E8F8F4;
+            color: #27AE60;
+        }
+
+        .tag-diet {
+            background: #FEF9E7;
+            color: #F39C12;
+        }
+
+        .tag-behavior {
+            background: #F4ECF7;
+            color: #8E44AD;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: #2C5530;
+            color: white;
+        }
+
+        .card-likes {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .card-likes:hover {
+            color: #FFD166;
+        }
+
+        .card-likes i {
+            margin-right: 5px;
+        }
+
+        .card-button {
+            background: #FFD166;
+            color: #2C5530;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .card-button:hover {
+            background: #FFB347;
+            transform: scale(1.05);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn.active {
+            background: #2C5530;
+            color: white;
+        }
+
+        .filter-btn:hover {
+            background: #2C5530;
+            color: white;
+        }
+
+        .capybara-facts {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .facts-title {
+            text-align: center;
+            color: #2C5530;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .fact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #F8F9FA;
+            border-radius: 10px;
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            color: #4A8F51;
+            margin-right: 15px;
+        }
+
+        .fact-text {
+            font-weight: 500;
+            color: #2C5530;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .card-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-paw"></i> Капибары</h1>
+            <p class="subtitle">Самые крупные и дружелюбные грызуны в мире</p>
+        </header>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active">Все капибары</button>
+            <button class="filter-btn">В дикой природе</button>
+            <button class="filter-btn">Домашние питомцы</button>
+            <button class="filter-btn">В зоопарках</button>
+        </div>
+
+        <div class="cards-container">
+            <!-- Карточка 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1558699446-1c66cf9ff8b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Капибара в воде">
+                    <div class="card-badge">Водолюб</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Капибара у водоема</h3>
+                    <p class="card-description">Капибары отлично плавают и ныряют, проводя много времени в воде. Они могут задерживать дыхание под водой до 5 минут.</p>
+                    
+                    <div class="card-stats">
+                        <div class="stat">
+                            <div class="stat-value">50-65</div>
+                            <div class="stat-label">см (высота)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">35-65</div>
+                            <div class="stat-label">кг (вес)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">8-10</div>
+                            <div class="stat-label">лет (жизнь)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span class="tag tag-habitat">Южная Америка</span>
+                        <span class="tag tag-diet">Травоядное</span>
+                        <span class="tag tag-behavior">Социальное</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-likes">
+                        <i class="far fa-heart"></i> <span>247</span>
+                    </div>
+                    <button class="card-button">Узнать больше</button>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Капибара с детенышем">
+                    <div class="card-badge">Семейные узы</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Капибара с детенышем</h3>
+                    <p class="card-description">Капибары живут группами от 10 до 20 особей. Самки часто воспитывают детенышей вместе, проявляя заботу о потомстве всей стаи.</p>
+                    
+                    <div class="card-stats">
+                        <div class="stat">
+                            <div class="stat-value">4-8</div>
+                            <div class="stat-label">детенышей</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">130-150</div>
+                            <div class="stat-label">дней (беременность)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">1-2</div>
+                            <div class="stat-label">помета в год</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span class="tag tag-habitat">Влажные саванны</span>
+                        <span class="tag tag-behavior">Стайные</span>
+                        <span class="tag">Заботливые</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-likes">
+                        <i class="far fa-heart"></i> <span>189</span>
+                    </div>
+                    <button class="card-button">Узнать больше</button>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1565018054863-49ec508d2685?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Капибара в траве">
+                    <div class="card-badge">Травоядный гигант</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Капибара на пастбище</h3>
+                    <p class="card-description">Капибары питаются травой и водными растениями. В день взрослая особь съедает до 3 кг растительной пищи.</p>
+                    
+                    <div class="card-stats">
+                        <div class="stat">
+                            <div class="stat-value">3-4</div>
+                            <div class="stat-label">кг еды в день</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">80%</div>
+                            <div class="stat-label">травы в рационе</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">6-8</div>
+                            <div class="stat-label">часов ест в день</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span class="tag tag-diet">Травоядное</span>
+                        <span class="tag tag-habitat">Болота</span>
+                        <span class="tag">Пасущееся</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-likes">
+                        <i class="far fa-heart"></i> <span>312</span>
+                    </div>
+                    <button class="card-button">Узнать больше</button>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1548761206-b3f9e7e6ab6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Капибара с другими животными">
+                    <div class="card-badge">Друг животных</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Общительная капибара</h3>
+                    <p class="card-description">Капибары известны своим миролюбивым характером. Они часто уживаются с другими животными, включая птиц, обезьян и даже крокодилов.</p>
+                    
+                    <div class="card-stats">
+                        <div class="stat">
+                            <div class="stat-value">10-20</div>
+                            <div class="stat-label">особей в группе</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">>20</div>
+                            <div class="stat-label">видов-соседей</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">Мирный</div>
+                            <div class="stat-label">характер</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span class="tag tag-behavior">Дружелюбный</span>
+                        <span class="tag">Социальный</span>
+                        <span class="tag">Миролюбивый</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-likes">
+                        <i class="far fa-heart"></i> <span>421</span>
+                    </div>
+                    <button class="card-button">Узнать больше</button>
+                </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1574870111865-5d0c6d2ba5fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Капибара в зоопарке">
+                    <div class="card-badge">Популярный питомец</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Капибара в неволе</h3>
+                    <p class="card-description">В некоторых странах капибар содержат как домашних животных. Им нужен просторный вольер с доступом к воде для плавания.</p>
+                    
+                    <div class="card-stats">
+                        <div class="stat">
+                            <div class="stat-value">20+</div>
+                            <div class="stat-label">стран</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">Легально</div>
+                            <div class="stat-label">в некоторых странах</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">Сложный</div>
+                            <div class="stat-label">уход</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span class="tag tag-habitat">Зоопарки</span>
+                        <span class="tag">Домашние питомцы</span>
+                        <span class="tag tag-behavior">Адаптивные</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-likes">
+                        <i class="far fa-heart"></i> <span>198</span>
+                    </div>
+                    <button class="card-button">Узнать больше</button>
+                </div>
+            </div>
+
+            <!-- Карточка 6 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1544971587-b842e9d45ed8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Капибара в снегу">
+                    <div class="card-badge">Уникальный случай</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Капибара в необычной среде</h3>
+                    <p class="card-description">Хотя капибары предпочитают теплый климат, они могут адаптироваться к различным условиям, если есть доступ к воде и пище.</p>
+                    
+                    <div class="card-stats">
+                        <div class="stat">
+                            <div class="stat-value">-5°C</div>
+                            <div class="stat-label">мин. температура</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">Адаптивные</div>
+                            <div class="stat-label">к климату</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">Выносливые</div>
+                            <div class="stat-label">организм</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-tags">
+                        <span class="tag tag-habitat">Разные климаты</span>
+                        <span class="tag">Адаптивные</span>
+                        <span class="tag">Выносливые</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-likes">
+                        <i class="far fa-heart"></i> <span>275</span>
+                    </div>
+                    <button class="card-button">Узнать больше</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="capybara-facts">
+            <h2 class="facts-title">Интересные факты о капибарах</h2>
+            <div class="facts-grid">
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-water"></i></div>
+                    <div class="fact-text">Капибары могут спать в воде, оставляя на поверхности только нос</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-users"></i></div>
+                    <div class="fact-text">Живут группами до 100 особей в сезон дождей</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="fact-text">Их зубы растут всю жизнь, стачиваясь о растительную пищу</div>
+                </div>
+                <div class="fact-item">
+                    <div class="fact-icon"><i class="fas fa-brain"></i></div>
+                    <div class="fact-text">Общаются с помощью различных звуков: свист, лай, мурлыканье</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ </body>
 </html>
