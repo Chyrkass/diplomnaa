@@ -1,0 +1,277 @@
+# Метаданные дипломной работы
+thesis:
+  title: "Разработка системы автоматизированного анализа эмоциональной окраски текстов в социальных сетях"
+  title_english: "Development of an Automated System for Sentiment Analysis of Social Media Texts"
+  type: "Бакалаврская работа" # или "Магистерская диссертация"
+  
+  student:
+    name: "Иванов Алексей Петрович"
+    group: "ПИ-401"
+    faculty: "Факультет информационных технологий"
+    department: "Кафедра программной инженерии"
+    email: "a.ivanov@edu.university.ru"
+    phone: "+7 (999) 123-45-67"
+
+  supervisor:
+    name: "д.т.н., проф. Петрова Мария Сергеевна"
+    position: "Профессор кафедры программной инженерии"
+    email: "m.petrova@university.ru"
+
+  reviewer:
+    name: "к.т.н., доц. Сидоров Андрей Владимирович"
+    position: "Доцент кафедры компьютерных наук"
+
+  university:
+    name: "Национальный исследовательский университет «МЭИ»"
+    city: "Москва"
+    year: 2024
+
+  dates:
+    submission: "2024-05-15"
+    defense: "2024-06-10"
+    start: "2023-09-01"
+    end: "2024-05-30"
+
+  keywords:
+    russian:
+      - "анализ тональности"
+      - "обработка естественного языка"
+      - "машинное обучение"
+      - "социальные сети"
+      - "нейронные сети"
+    english:
+      - "sentiment analysis"
+      - "natural language processing"
+      - "machine learning"
+      - "social media"
+      - "neural networks"
+
+# Настройки исследования и экспериментов
+research:
+  topic: "Анализ эмоциональной окраски русскоязычных текстов"
+  problem: "Низкая точность существующих методов для русскоязычного контента"
+  hypothesis: "Использование ensemble-моделей повысит точность анализа на 15%"
+  
+  objectives:
+    - "Провести обзор существующих методов анализа тональности"
+    - "Собрать и разместить датасет русскоязычных текстов"
+    - "Разработать архитектуру системы"
+    - "Реализовать и обучить модели машинного обучения"
+    - "Провести сравнительный анализ эффективности"
+
+  methodology:
+    - "Системный анализ"
+    - "Машинное обучение"
+    - "Статистический анализ"
+    - "Экспериментальная проверка"
+
+  datasets:
+    main:
+      name: "Russian Sentiment Corpus"
+      size: 50000
+      source: "Twitter, VK, Telegram"
+      classes: ["positive", "negative", "neutral"]
+      split:
+        train: 70
+        validation: 15
+        test: 15
+
+    external:
+      - name: "RuSentiment"
+        size: 35000
+      - name: "SentiRu"
+        size: 28000
+
+  models:
+    - name: "BERT-base"
+      parameters: 110000000
+      training_time: "12 hours"
+      
+    - name: "CNN + LSTM"
+      parameters: 2500000
+      training_time: "4 hours"
+      
+    - name: "Random Forest"
+      parameters: 1000
+      training_time: "30 minutes"
+
+  metrics:
+    primary: "F1-score"
+    secondary:
+      - "accuracy"
+      - "precision"
+      - "recall"
+      - "auc-roc"
+
+# Структура дипломной работы
+structure:
+  total_pages: 85
+  total_figures: 24
+  total_tables: 12
+  total_references: 45
+
+  chapters:
+    - number: 1
+      title: "Аналитический раздел"
+      pages: 25
+      sections:
+        - "1.1 Постановка задачи и цели исследования"
+        - "1.2 Обзор существующих решений"
+        - "1.3 Сравнительный анализ методов"
+        - "1.4 Выбор технологического стека"
+
+    - number: 2
+      title: "Проектный раздел"
+      pages: 30
+      sections:
+        - "2.1 Архитектура системы"
+        - "2.2 Модели данных"
+        - "2.3 Алгоритмы обработки"
+        - "2.4 Проектирование интерфейса"
+
+    - number: 3
+      title: "Реализация и тестирование"
+      pages: 25
+      sections:
+        - "3.1 Реализация основных модулей"
+        - "3.2 Обучение моделей"
+        - "3.3 Методика тестирования"
+        - "3.4 Анализ результатов"
+
+  appendices:
+    - "А - Исходный код основных модулей"
+    - "Б - Примеры размеченных данных"
+    - "В - Результаты экспериментов"
+
+  figures:
+    - "Рис. 1.1 - Архитектура системы анализа тональности"
+    - "Рис. 2.1 - Схема базы данных"
+    - "Рис. 3.1 - График обучения модели"
+
+# Технологический стек проекта
+technology:
+  programming:
+    language: "Python"
+    version: "3.9"
+    
+  machine_learning:
+    framework: "PyTorch"
+    version: "2.0"
+    libraries:
+      - "transformers"
+      - "scikit-learn"
+      - "nltk"
+      - "pandas"
+      - "numpy"
+
+  data_processing:
+    - "spaCy (русская модель)"
+    - "NLTK"
+    - "pymorphy2"
+
+  development:
+    ide: "VS Code"
+    version_control: "Git"
+    repository: "https://github.com/username/thesis-sentiment-analysis"
+    
+  deployment:
+    environment: "Docker"
+    requirements:
+      - "CPU: 8 cores"
+      - "RAM: 16GB"
+      - "GPU: NVIDIA RTX 3080 (рекомендуется)"
+
+  data_storage:
+    database: "PostgreSQL"
+    cache: "Redis"
+    file_storage: "local FS"
+
+# Календарный план выполнения
+timeline:
+  total_weeks: 36
+  stages:
+    - name: "Подготовительный этап"
+      weeks: "1-4"
+      tasks:
+        - "Выбор темы и утверждение"
+        - "Изучение литературы"
+        - "Формулировка целей"
+      completion: 100
+      status: "completed"
+
+    - name: "Теоретическое исследование"
+      weeks: "5-12"
+      tasks:
+        - "Анализ существующих методов"
+        - "Сбор датасетов"
+        - "Разработка методологии"
+      completion: 100
+      status: "completed"
+
+    - name: "Практическая реализация"
+      weeks: "13-24"
+      tasks:
+        - "Разработка архитектуры"
+        - "Реализация моделей"
+        - "Предварительное тестирование"
+      completion: 85
+      status: "in_progress"
+
+    - name: "Эксперименты и анализ"
+      weeks: "25-30"
+      tasks:
+        - "Проведение экспериментов"
+        - "Сравнительный анализ"
+        - "Оптимизация параметров"
+      completion: 40
+      status: "in_progress"
+
+    - name: "Оформление работы"
+      weeks: "31-36"
+      tasks:
+        - "Написание текста"
+        - "Оформление графиков"
+        - "Подготовка презентации"
+        - "Предзащита"
+      completion: 10
+      status: "pending"
+
+  milestones:
+    - date: "2024-01-15"
+      event: "Завершение теоретической части"
+    - date: "2024-03-01"
+      event: "Готовность прототипа системы"
+    - date: "2024-04-15"
+      event: "Завершение экспериментов"
+    - date: "2024-05-01"
+      event: "Полный черновик работы"
+
+# Планируемые результаты и критерии успеха
+expected_results:
+  scientific:
+    - "Предложена новая архитектура ensemble-модели"
+    - "Разработан улучшенный алгоритм предобработки текста"
+    - "Создан размеченный датасет из 50k русскоязычных текстов"
+
+  practical:
+    - "Реализована система анализа тональности с веб-интерфейсом"
+    - "Достигнута точность классификации 92%"
+    - "Обеспечена скорость обработки 1000 текстов/секунду"
+
+  novelty:
+    - "Адаптация BERT для русскоязычных социальных сетей"
+    - "Комбинирование rule-based и ML подходов"
+    - "Оптимизация для работы с короткими текстами"
+
+  publication:
+    planned:
+      - "Статья в журнале ВАК"
+      - "Доклад на конференции 'Искусственный интеллект'"
+    submitted: []
+    published: []
+
+  code_repository:
+    public: true
+    license: "MIT"
+    documentation: "README.md + API docs"
+    demo: "https://sentiment-demo.university.ru"
