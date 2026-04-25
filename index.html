@@ -642,7 +642,67 @@ svg text {
             </div>
         </div>
     </div>
+<!-- Новый раздел: Необычные животные -->
+<div class="unusual-animals">
+    <h2 class="facts-title">Необычные животные мира</h2>
+    
+    <!-- Раскрывающийся список -->
+    <div class="selector-container">
+        <label for="animal-select">Выберите животное:</label>
+        <select id="animal-select">
+            <option value="">-- Выберите --</option>
+            <option value="axolotl">Аксолотль</option>
+            <option value="platypus">Утконос</option>
+            <option value="narwhal">Нарвал</option>
+            <option value="aardvark">Трубкозуб</option>
+            <option value="tarsier">Долгопят</option>
+        </select>
+    </div>
 
+    <!-- Таблица с необычными животными -->
+    <table class="animals-table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Среда обитания</th>
+                <th>Интересный факт</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Аксолотль</td>
+                <td>Озёра Мексики</td>
+                <td>Способен регенерировать утраченные конечности.</td>
+            </tr>
+            <tr>
+                <td>Утконос</td>
+                <td>Восточная Австралия</td>
+                <td>Одно из немногих ядовитых млекопитающих.</td>
+            </tr>
+            <tr>
+                <td>Нарвал</td>
+                <td>Арктические воды</td>
+                <td>Его бивень на самом деле зуб длиной до 3 метров.</td>
+            </tr>
+            <tr>
+                <td>Трубкозуб</td>
+                <td>Африка к югу от Сахары</td>
+                <td>Название означает "земляной поросёнок".</td>
+            </tr>
+            <tr>
+                <td>Долгопят</td>
+                <td>Юго-Восточная Азия</td>
+                <td>Глаза больше, чем его мозг.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Блок с подробной информацией (появляется при выборе) -->
+    <div id="animal-detail" class="animal-detail">
+        <!-- Динамический контент будет вставлен через JS -->
+    </div>
+</div>
+<!-- Конец нового раздела -->
 
  </body>
 </html>
