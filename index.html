@@ -111,6 +111,42 @@
             opacity: 0.9;
         }
 
+        /* Блок "Обо мне" в начале */
+        .about-section {
+            background: linear-gradient(135deg, #FFB347, #FF6B6B);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .about-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .about-links a {
+            background: white;
+            color: #2C5530;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .about-links a:hover {
+            background: #FFD166;
+            color: #2C5530;
+            transform: scale(1.05);
+        }
+
         /* Карточки капибар */
         .cards-container {
             display: grid;
@@ -445,41 +481,6 @@
             margin-bottom: 8px;
         }
 
-        /* Раздел "Обо мне" */
-        .about-section {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .about-links {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .about-links a {
-            background: #2C5530;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .about-links a:hover {
-            background: #FFD166;
-            color: #2C5530;
-            transform: scale(1.05);
-        }
-
         @media (max-width: 768px) {
             .cards-container {
                 grid-template-columns: 1fr;
@@ -504,8 +505,8 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Главная</a></li>
-                    <li><a href="#capybaras">Блок капибар</a></li>
                     <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#capybaras">Блок капибар</a></li>
                 </ul>
             </nav>
             <div id="home">
@@ -514,10 +515,25 @@
             </div>
         </header>
 
+        <!-- Блок "Обо мне" (перемещён в начало) -->
+        <div id="about" class="about-section">
+            <h2 class="facts-title" style="color: white;">Обо мне</h2>
+            <p style="margin-bottom: 20px;">Здесь собраны ссылки на мои проекты и полезные ресурсы.</p>
+            <ul class="about-links">
+                <li><a href="https://chyrkass.github.io/htmll/" target="_blank">Обучающий сайт к дипломной работе</a></li>
+                <li><a href="https://www.figma.com/design/LpWnEvMUAf2ADD0T1aninM/Untitled?node-id=0-1&node-type=canvas&t=JSCd0vhJqn4WIP4P-0" target="_blank">Сайт на Figma</a></li>
+                <li><a href="https://stackblitzstartersuvgg6gt1-5jgk--8080--4c73681d.local-corp.webcontainer.io" target="_blank">Сайт на StackBlitz</a></li>
+                <li><a href="https://codepen.io/pen" target="_blank">Онлайн редактор HTML</a></li>
+                <li><a href="https://zolotareva6.wordpress.com/wp-admin/post.php?post=5&action=edit" target="_blank">Сайт на WordPress</a></li>
+                <li><a href="https://chyrkass.github.io/YML/" target="_blank">Сайт по YML</a></li>
+                <li><a href="https://chyrkass.github.io/ddd/" target="_blank">Шрифты</a></li>
+            </ul>
+        </div>
+
         <!-- Анимированный SVG заголовок -->
         <div class="wrapper">
             <svg>
-                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                <text x="25%" y="25%" dy=".35em" text-anchor="middle">
                     Дипломная работа Золотаревой Анны
                 </text>
             </svg>
@@ -820,21 +836,6 @@
                 </tbody>
             </table>
             <div id="animal-detail" class="animal-detail"></div>
-        </div>
-
-        <!-- Раздел "Обо мне" -->
-        <div id="about" class="about-section">
-            <h2 class="facts-title">Обо мне</h2>
-            <p style="margin-bottom: 20px;">Здесь собраны ссылки на мои проекты и полезные ресурсы.</p>
-            <ul class="about-links">
-                <li><a href="https://chyrkass.github.io/htmll/" target="_blank">Обучающий сайт к дипломной работе</a></li>
-                <li><a href="https://www.figma.com/design/LpWnEvMUAf2ADD0T1aninM/Untitled?node-id=0-1&node-type=canvas&t=JSCd0vhJqn4WIP4P-0" target="_blank">Сайт на Figma</a></li>
-                <li><a href="https://stackblitzstartersuvgg6gt1-5jgk--8080--4c73681d.local-corp.webcontainer.io" target="_blank">Сайт на StackBlitz</a></li>
-                <li><a href="https://codepen.io/pen" target="_blank">Онлайн редактор HTML</a></li>
-                <li><a href="https://zolotareva6.wordpress.com/wp-admin/post.php?post=5&action=edit" target="_blank">Сайт на WordPress</a></li>
-                <li><a href="https://chyrkass.github.io/YML/" target="_blank">Сайт по YML</a></li>
-                <li><a href="https://chyrkass.github.io/ddd/" target="_blank">Шрифты</a></li>
-            </ul>
         </div>
     </div>
 
