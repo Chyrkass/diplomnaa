@@ -699,3 +699,52 @@ svg text {
 .animal-detail p {
     margin-bottom: 8px;
 }
+/* Обеспечение адаптивности сайта на всех устройствах */
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    /* Основной фон и шрифт уже заданы, но можно переопределить при необходимости */
+}
+
+/* Все изображения, видео и таблицы не должны выходить за пределы экрана */
+img, video, iframe, table, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Контейнер теперь имеет боковые отступы для маленьких экранов */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Добавлены отступы */
+}
+
+/* Дополнительная защита от переполнения текстом */
+body, p, a, span, li, td, th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Адаптивные улучшения для мобильных устройств */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem; /* Уменьшаем общий отступ */
+    }
+    .container {
+        padding: 0 10px;
+    }
+    /* Уже существующее правило для карточек, но можно оставить */
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
