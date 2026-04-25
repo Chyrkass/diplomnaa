@@ -703,6 +703,68 @@ svg text {
     </div>
 </div>
 <!-- Конец нового раздела -->
+	<!-- Скрипт для обработки выбора животного -->
+<script>
+    // Данные о животных
+    const animalsInfo = {
+        axolotl: {
+            name: "Аксолотль",
+            habitat: "Озёра Мексики",
+            fact: "Способен регенерировать утраченные конечности, а также части сердца и мозга.",
+            description: "Аксолотль — неотеническая личинка некоторых видов амбистом, сохраняющая способность к размножению на личиночной стадии. Из-за уникальной способности к регенерации активно изучается учёными.",
+            image: "https://via.placeholder.com/150x150?text=Axolotl"
+        },
+        platypus: {
+            name: "Утконос",
+            habitat: "Восточная Австралия",
+            fact: "Одно из немногих ядовитых млекопитающих; яд содержится в шпорах на задних лапах.",
+            description: "Утконос — яйцекладущее млекопитающее с клювом, перепончатыми лапами и хвостом, как у бобра. Питается водными беспозвоночными.",
+            image: "https://via.placeholder.com/150x150?text=Platypus"
+        },
+        narwhal: {
+            name: "Нарвал",
+            habitat: "Арктические воды",
+            fact: "Его бивень — это длинный зуб, который может достигать 3 метров в длину.",
+            description: "Нарвал — морское млекопитающее, обитающее в холодных водах Арктики. Бивень используется для охоты и, возможно, для сенсорного восприятия.",
+            image: "https://via.placeholder.com/150x150?text=Narwhal"
+        },
+        aardvark: {
+            name: "Трубкозуб",
+            habitat: "Африка к югу от Сахары",
+            fact: "Название означает 'земляной поросёнок' на африкаанс.",
+            description: "Трубкозуб — ночное млекопитающее, питающееся муравьями и термитами. Обладает мощными когтями для рытья нор и длинным липким языком.",
+            image: "https://via.placeholder.com/150x150?text=Aardvark"
+        },
+        tarsier: {
+            name: "Долгопят",
+            habitat: "Юго-Восточная Азия",
+            fact: "Глаза долгопята больше, чем его мозг.",
+            description: "Долгопят — маленький примат, ведущий ночной образ жизни. Огромные глаза помогают ему охотиться в темноте на насекомых и мелких позвоночных.",
+            image: "https://via.placeholder.com/150x150?text=Tarsier"
+        }
+    };
+
+    // Обработчик события изменения выбора
+    document.getElementById('animal-select').addEventListener('change', function() {
+        const selectedValue = this.value;
+        const detailBlock = document.getElementById('animal-detail');
+        
+        if (selectedValue && animalsInfo[selectedValue]) {
+            const info = animalsInfo[selectedValue];
+            detailBlock.innerHTML = `
+                <h3>${info.name}</h3>
+                <img src="${info.image}" alt="${info.name}" style="max-width:150px; border-radius:10px; margin-bottom:10px;">
+                <p><strong>Среда обитания:</strong> ${info.habitat}</p>
+                <p><strong>Интересный факт:</strong> ${info.fact}</p>
+                <p>${info.description}</p>
+            `;
+            detailBlock.style.display = 'block';
+        } else {
+            detailBlock.style.display = 'none';
+            detailBlock.innerHTML = '';
+        }
+    });
+</script>
 
  </body>
 </html>
