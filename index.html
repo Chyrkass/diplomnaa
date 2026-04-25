@@ -1,6 +1,6 @@
 <html>
 <head>
-	<link rel="stylesheet href="style.css">
+	<link rel="stylesheet" href="style.css">
 	<style>
 	@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
@@ -354,6 +354,107 @@ svg text {
             color: #2C5530;
         }
 
+        /* Стили для нового раздела с необычными животными */
+        .unusual-animals {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .selector-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .selector-container label {
+            font-weight: 600;
+            color: #2C5530;
+            margin-right: 10px;
+        }
+
+        #animal-select {
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: 2px solid #4A8F51;
+            background: white;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2C5530;
+            cursor: pointer;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        #animal-select:hover,
+        #animal-select:focus {
+            border-color: #FFD166;
+            box-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+        }
+
+        .animals-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .animals-table thead {
+            background: #2C5530;
+            color: white;
+        }
+
+        .animals-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .animals-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+        }
+
+        .animals-table tbody tr:hover {
+            background: #F0F8F0;
+            transition: 0.3s;
+        }
+
+        .animals-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Стиль для блока с подробной информацией */
+        .animal-detail {
+            margin-top: 25px;
+            padding: 20px;
+            background: #F8F9FA;
+            border-radius: 12px;
+            border-left: 5px solid #4A8F51;
+            display: none; /* изначально скрыт */
+        }
+
+        .animal-detail img {
+            max-width: 150px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .animal-detail h3 {
+            color: #2C5530;
+            margin-bottom: 10px;
+        }
+
+        .animal-detail p {
+            margin-bottom: 8px;
+        }
+
         @media (max-width: 768px) {
             .cards-container {
                 grid-template-columns: 1fr;
@@ -366,6 +467,10 @@ svg text {
             .card-stats {
                 flex-direction: column;
                 gap: 10px;
+            }
+            
+            .animals-table {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -641,8 +746,8 @@ svg text {
                 </div>
             </div>
         </div>
-    </div>
- <!-- Новый раздел: Необычные животные -->
+
+        <!-- Новый раздел: Необычные животные -->
         <div class="unusual-animals">
             <h2 class="facts-title">Необычные животные мира</h2>
             
