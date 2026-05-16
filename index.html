@@ -926,5 +926,110 @@ if (localStorage.getItem('theme') === 'dark') {
     themeToggle.textContent = '☀️ Светлая';
 }
 </script>
+    <script>
+// Интерактивная фильтрация карточек
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Убираем active у всех кнопок
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        // Добавляем active нажатой
+        this.classList.add('active');
+        
+        const filter = this.textContent;
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            if (filter === 'Все капибары') {
+                card.style.display = 'block';
+            } else if (filter === 'В дикой природе') {
+                const tags = card.querySelector('.card-tags').textContent;
+                card.style.display = tags.includes('Америка') || tags.includes('саванны') || tags.includes('Болота') ? 'block' : 'none';
+            } else if (filter === 'Домашние питомцы') {
+                const tags = card.querySelector('.card-tags').textContent;
+                card.style.display = tags.includes('питомцы') ? 'block' : 'none';
+            } else if (filter === 'В зоопарках') {
+                const tags = card.querySelector('.card-tags').textContent;
+                card.style.display = tags.includes('Зоопарки') ? 'block' : 'none';
+            }
+        });
+    });
+});
+</script>
+    <!-- Кнопка "Наверх" -->
+<button onclick="topFunction()" id="scrollTopBtn" title="Наверх">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<style>
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background: #FFD166;
+    color: #2C5530;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background: #FF6B6B;
+    color: white;
+    transform: translateY(-5px);
+}
+</style>
+
+<script>
+// Кнопка "Наверх"
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        document.getElementById("scrollTopBtn").style.display = "block";
+    } else {
+        document.getElementById("scrollTopBtn").style.display = "none";
+    }
+}
+
+function topFunction() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+    <script>
+// Интерактивные лайки для карточек
+document.querySelectorAll('.card-likes').forEach(likeBtn => {
+    likeBtn.addEventListener('click', function() {
+        const heartIcon = this.querySelector('i');
+        const countSpan = this.querySelector('span');
+        let count = parseInt(countSpan.textContent);
+        
+        if (heartIcon.classList.contains('far')) {
+            // Лайк
+            heartIcon.classList.remove('far');
+            heartIcon.classList.add('fas');
+            heartIcon.style.color = '#FF6B6B';
+            count++;
+            // Анимация
+            this.style.transform = 'scale(1.2)';
+            setTimeout(() => { this.style.transform = 'scale(1)'; }, 200);
+        } else {
+            // Отмена лайка
+            heartIcon.classList.remove('fas');
+            heartIcon.classList.add('far');
+            heartIcon.style.color = '';
+            count--;
+        }
+        countSpan.textContent = count;
+    });
+});
+</script>
 </body>
 </html>
