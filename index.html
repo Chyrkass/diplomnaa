@@ -508,6 +508,24 @@
                     <li><a href="#about">Обо мне</a></li>
                     <li><a href="#capybaras">Блок капибар</a></li>
                 </ul>
+                <!-- Кнопка переключения темы (добавьте в навигацию) -->
+<button id="themeToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+    🌓 Тема
+</button>
+                <style>
+.dark-theme {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    color: #eee !important;
+}
+.dark-theme .card, 
+.dark-theme .capybara-facts, 
+.dark-theme .unusual-animals,
+.dark-theme .about-section {
+    background: #2a2a3e !important;
+    color: #eee !important;
+}
+</style>
+
             </nav>
             <div id="home">
                 <h1><i class="fas fa-paw"></i> Капибары</h1>
@@ -888,5 +906,25 @@
             }
         });
     </script>
+    <script>
+// Переключение темы
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+        this.textContent = '☀️ Светлая';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        this.textContent = '🌓 Тема';
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// При загрузке проверяем сохранённую тему
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeToggle.textContent = '☀️ Светлая';
+}
+</script>
 </body>
 </html>
